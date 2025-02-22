@@ -1,3 +1,5 @@
+import './globals.css'
+
 export const metadata = {
   title: "Code Connect",
   description: "Uma rede social para desenvolvedores.",
