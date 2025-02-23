@@ -10,8 +10,9 @@
     "api": "json-server posts.json -p 3042"
   },
   "dependencies": {
+    "next": "14.2.24",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.24"
+    "winston": "^3.17.0"
   }
 }
