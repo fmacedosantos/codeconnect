@@ -1,8 +1,8 @@
 import { CardPost } from "@/components/CardPost"
 import logger from "@/logger"
+import Link from "next/link"
 
 import styles from './page.module.css'
-import Link from "next/link"
 
 async function getAllPosts (page) {
   const response = await fetch(`http://localhost:3042/posts?_page=${page}&_per_page=6`)
@@ -20,8 +20,10 @@ export default async function Home({ searchParams }) {
   return (
     <main className={styles.grid}>
       {posts.map(post =>  <CardPost key={post.id} post={post} />)}
-      {prev && <Link href={`/?page=${prev}`}>Página anterior</Link>}
-      {next && <Link href={`/?page=${next}`}>Próxima página</Link>}
+      <div className={styles.links}>
+        {prev && <Link href={`/?page=${prev}`}>Página anterior</Link>}
+        {next && <Link href={`/?page=${next}`}>Próxima página</Link>}
+      </div>
     </main>
   )
 }
